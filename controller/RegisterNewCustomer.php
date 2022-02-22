@@ -1,6 +1,5 @@
 <?php
-
-class NewCustomer extends Controller
+class RegisterNewCustomer extends Controller
 {
     public function registerNewCustomer($fname, $mname, $lname, $id_no, $phone, $gfname, $glname, $gid_no, $gphone)
     {

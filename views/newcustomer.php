@@ -32,10 +32,33 @@ include "partials/header.php";
                     <a href="customers"><button class="btn-secondary" style="width: 20%">Back</button></a>
                 </div>
             </div>
+            <?php
+            $message = '';
+            if (isset($_POST['submit'])) {
+                $customer = new RegisterNewCustomer();
+                
+                $firstName = $_POST['firstName'];
+                $middletName = $_POST['middletName'];
+                $lastName = $_POST['lastName'];
+                $phone = $_POST['phone'];
+                $idNumber = $_POST['idNumber'];
+                $gFirstName = $_POST['gfirstName'];
+                $glastName = $_POST['glastName'];
+                $gphone = $_POST['gphone'];
+                $gidNumber = $_POST['gidNumber'];
+                if ($customer->registerNewCustomer($firstName, $middletName, $lastName, $phone, $idNumber, $gFirstName, $glastName, $gphone,$gidNumber)) {
+                    $message = '<div style="margin-top: 5px;" class="alert alert-success" role="alert">Customer has been succesfuly registered</div>';
+                }
+            }
+
+
+            ?>
             <div style="background-color: #fff;" class="row">
                 <div class="col-sm-12" style="margin-left: auto; margin-right: auto; width: auto;">
-                    <form class="form-control" style="margin: 10%">
-                        <h4 style="color: #282f">Register new customer</h4>
+                <?php echo $message; ?>
+                    <form class="form-control" style="margin: 10%" method="post" action="newcustomer">
+
+                        <h4 style="color: #282">Register new customer</h4>
                         <p> <label>Please fill in the information bellow (fields marked red are compulsory):</label></p>
                         <p>
                         <h5 style="color: #228">Cunstomer Information</h5>
@@ -58,7 +81,7 @@ include "partials/header.php";
                         <label class="form-label">Phone Number <span style="color: red">*</span></label>
                         <input type="text" placeholder="0722100100" name="gphone" class="form-control" />
                         <label class="form-label">ID Number <span style="color: red">*</span></label>
-                        <input type="text" placeholder="12345678" name="gIdNumber" class="form-control" />
+                        <input type="text" placeholder="12345678" name="gidNumber" class="form-control" />
                         </p>
                         <input type="submit" name="submit" value="Register" class="btn-primary" style="width: 100%" /><br>
 
