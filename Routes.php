@@ -1,12 +1,62 @@
 <?php
 
-Route::set('login', function(){
+/**Logic for implementing the routing protocal */
+/**route index to login */
+Route::set('index.php', function () {
     Login::createView('Login');
-//   echo "Log In";
 });
-Route::set('home', function(){
+/**route for login */
+Route::set('login', function () {
+    Login::createView('Login');
+});
+/**route for home */
+Route::set('home', function () {
     Home::createView('Home');
-    // echo "Home";
-  });
+});
 
-?>
+/**route for customers */
+Route::set('customers', function () {
+    Home::createView('Customer');
+});
+/**route for new customer */
+Route::set('newcustomer', function () {
+    Home::createView('NewCustomer');
+});
+
+/**route for loans */
+Route::set('loans', function () {
+    Home::createView('Loan');
+});
+/**route for new loan */
+Route::set('newloan', function () {
+    Home::createView('NewLoan');
+});
+/**route for payments */
+Route::set('payments', function () {
+    Home::createView('Payment');
+});
+/**route for payment schedules */
+Route::set('paymentschedule', function () {
+    Home::createView('PaymentSchedule');
+});
+/**route for missed_payments */
+Route::set('missedpayments', function () {
+    Home::createView('MissedPayment');
+});
+/**route for red listed customers */
+Route::set('redlistedcustomers', function () {
+    Home::createView('RedListedCustomers');
+});
+/**route for reports */
+Route::set('reports', function () {
+    Home::createView('Report');
+});
+/**route for hr_module */
+Route::set('hrmodule', function () {
+    Home::createView('HrModule');
+});
+/**route for branch_manager */
+Route::set('branchmanager', function () {
+    Home::createView('BranchManager');
+});
+
