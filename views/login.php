@@ -12,43 +12,43 @@
 </head>
 <?php
 $message = "";
-if (isset($_POST['submit'])) {
-    $log = new Login();
+if(isset($_POST['submit'])){
+    $login = new Login();
     $username = $_POST['username'];
     $password = $_POST['password'];
-    $res = $log->login($username, $password);
-    if ($res) {
+    $res = $login->login($username, $password);
+    if($res){
         header('location: home');
-    } else {
-        $message = '<span style="color: red;">Invalid username or password!</span>';
+    }
+    else{
+        $message = '<span style="color: red;"><i>Invalid username or password!</i></span>';
     }
 }
 ?>
-
 <body style="text-align: center; margin-top: 5%; background: #ddd;">
-    <h1>Welcome to LMS</h1>
+    <h1>Welcome to <span style="color:crimson"><i>f</i></span><span style="color:darkmagenta">LMS</span></h1>
     <div class="card" style="width: fit-content; text-align: center; margin-left:auto; margin-right: auto; border-radius: 30%">
         <form class="form-control" method="post" action="login">
             <div style="text-align: center; margin: 30px;">
                 <p>
                     <label>Please enter the login details</label>
                 </p>
-                <p><?php echo $message; ?></p>
+                <p><?php echo $message;?></p>
                 <p>
-                    <label>Enter username</label><br><br>
+                    <label class="form-label">Username</label>
                     <input class="form-control" type="text" name="username" />
                 </p>
                 <p>
-                    <label>Enter password</label><br><br>
+                    <label class="form-label">Password</label>
                     <input class="form-control" type="password" name="password" />
                 </p>
                 <p>
                     <input class="form-control btn-primary" style="width: 100%;" type="submit" name="submit" value="Login" />
                 </p>
                 <?php
-
+              
                 ?>
-
+                
 
             </div>
         </form>

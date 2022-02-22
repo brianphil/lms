@@ -11,9 +11,6 @@
             background-color: #000;
             color: white;
             text-align: center;
-            /* height: 50px; */
-            overflow-y: visible;
-            /* z-index: 0; */
         }
 
         .header {
@@ -24,8 +21,8 @@
             background-color: #000;
             color: white;
             text-align: center;
-            overflow-y: hidden;
-            /* z-index: 12887777889; */
+            z-index: 10000000;
+
         }
 
 
@@ -107,7 +104,4 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!-- favicon here  -->
     <link rel="icon" type="image/x-icon" href="http://localhost/lms/assets/images/logo.png">
-    <!-- <script src="http://localhost/lms/jsPDF/jspdf.js" type="text/javascript"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf-autotable/3.5.6/jspdf.plugin.autotable.min.js"></script> -->
-
 </head>

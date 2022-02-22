@@ -26,7 +26,7 @@ include "partials/header.php";
         <a href="newloan"><button class="btn-secondary" style="width: 20%;">Create New</button></a>
     </div>
     <div class="row">
-        <div class="col-sm-12">
+        <div class="col-sm-12" style="margin: 3%; overflow-x: hidden;">
            <?php require_once "datatable.php" ?>
         </div>
 

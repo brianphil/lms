@@ -55,6 +55,10 @@ Route::set('reports', function () {
 Route::set('hrmodule', function () {
     Home::createView('HrModule');
 });
+/**route for register new employee */
+Route::set('registernewemployee', function () {
+    Home::createView('RegisterNewEmployee');
+});
 /**route for branch_manager */
 Route::set('branchmanager', function () {
     Home::createView('BranchManager');

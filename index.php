@@ -10,6 +10,9 @@ function ($className)
     else if(is_file('./controller/'.$className.'.php')){
         require_once './controller/'.$className.'.php';
     }
+    else if(is_file('./model/'.$className.'.php')){
+        require_once './model/'.$className.'.php';
+    }
 }
 
 );

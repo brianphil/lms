@@ -44,9 +44,9 @@ include "partials/header.php";
                     <input id="term" class="form-control" type="text" name="term" placeholder="4" />
                     <label style="color: #228;" class="form-label">Repayment start date <span style="color: red">*</span></label>
                     <input class="form-control" type="date" name="repaymentStartDate" /><br>
-                    <button type="button" onclick="calculateRate(); return false;" id="calculate" name="calculate" style="width: 50%;" class="btn-secondary">Calculate</button><br><br>
+                    <button type="button" onclick="calculateRate(); return false;" id="calculate" name="calculate" style="width: 50%;" class="btn-success">Calculate</button><br><br>
                     <label style="color: #228;" class="form-label">Amount to repay (Ksh)</label>
-                    <input id="amount-to-pay" class="form-control" type="text" name="paymentAmount" placeholder="6,500" disabled />
+                    <input id="amount-to-pay" class="form-control" type="text" name="paymentAmount" placeholder="0.00" disabled />
                     <p>
                         <input id="submit" class="form-control btn-primary" type="submit" value="Submit" name="submit" style="margin-top: 10px; width: 100%;" disabled />
                     </p>
