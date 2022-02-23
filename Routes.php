@@ -22,6 +22,11 @@ Route::set('customers', function () {
 Route::set('newcustomer', function () {
     Home::createView('NewCustomer');
 });
+/**route for customer autosearch */
+Route::set('customerautosearch', function () {
+    Home::createView('CustomerAutosearch');
+});
+
 
 /**route for loans */
 Route::set('loans', function () {

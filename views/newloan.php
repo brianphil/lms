@@ -31,12 +31,13 @@ include "partials/header.php";
         <div class="col-sm-12" style="margin-bottom: 5px;">
             <a href="loans"><button class="btn-secondary" style="width: 20%;">Back</button></a>
         </div>
+
         <div class="row">
             <div class="col-sm-12" style="margin-left: auto; margin-right: auto; width: auto;">
                 <h5 style="color: #282;">Create new loan</h5>
                 <form class="form-control" style="margin: 10%" method="post">
-                    <label style="color: #228;" class="form-label">Search customer <span style="color: red">*</span></label>
-                    <input class="form-control" type="text" name="search" placeholder="Search name/ID/phone no." />
+                    <label style="color: #228;" class="form-label">Customer Name <span style="color: red">*</span></label>
+                    <input class="form-control" id="autocomplete-search" type="text" name="search" placeholder="Search name..." />
                     <input type="hidden" name="customerId" value="">
                     <label style="color: #228;" class="form-label">Loan amount (Ksh) <span style="color: red">*</span></label>
                     <input id="amount" class="form-control" type="text" name="amount" placeholder="5000" />
@@ -64,7 +65,7 @@ include "partials/header.php";
                 var total = document.getElementById("amount").value * Math.pow((1 + 0.0678), document.getElementById("term").value)
                 var amount = document.getElementById("amount-to-pay").value = Math.floor(total);
             } else {
-                alert("Please enter the loan amount and the term");
+                alert("Please enter the required loan amount and the term period first!");
             }
         }
 
@@ -77,7 +78,14 @@ include "partials/header.php";
             }
         }
     </script>
-
+    <script type="text/javascript">
+        $(function() {
+            $("#autocomplete-search").autocomplete({
+                source: 'customerautosearch',
+            });
+        });
+    </script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.9.0/js/bootstrap-datepicker.min.js" integrity="sha512-T/tUfKSV1bihCnd+MxKD0Hm1uBBroVYBOYSk1knyvQ9VyZJpc/ALb4P0r6ubwVPSGB2GvjeoMAJJImBG12TiaQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 </body>
 
 <?php

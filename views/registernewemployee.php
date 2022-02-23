@@ -58,7 +58,7 @@ include "partials/header.php";
                 $username = $_POST['username'];
                 $role = $_POST['role'];
                 if ($employee->registerNew($firstName, $middletName, $lastName, $phone, $idNumber, $username, $password, $role)) {
-                    $message = '<span style="color: darkgreen;"><i>Employee has been succesfuly registered</i></span>';
+                    $message = '<div style="margin-top: 5px;" class="alert alert-success" role="alert">Employee has been succesfuly registered</div>';
                 }
             }
 
@@ -66,7 +66,7 @@ include "partials/header.php";
             ?>
             <div class="row" style="margin: 1%;">
                 <div class="col-sm-12" style="margin-left: auto; margin-right: auto; width: auto;">
-                    <h4><?php echo $message; ?></h4>
+                    <?php echo $message; ?>
                     <form style="margin: 10%;" class="form-control" method="post" action="registernewemployee">
                         <h3>Register new employee</h3>
                         <p>

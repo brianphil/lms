@@ -9,6 +9,7 @@
     <title>Login Page</title>
     <!-- responsive design -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/x-icon" href="http://localhost/lms/assets/images/logo.png">
 </head>
 <?php
 $message = "";
@@ -21,7 +22,7 @@ if(isset($_POST['submit'])){
         header('location: home');
     }
     else{
-        $message = '<span style="color: red;"><i>Invalid username or password!</i></span>';
+        $message = '<div style="margin-top: 5px;" class="alert alert-danger" role="alert">Invalid username or password!</div>';
     }
 }
 ?>

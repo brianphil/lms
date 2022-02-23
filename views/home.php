@@ -5,6 +5,7 @@ include "partials/header.php";
 <body>
     <div class="header">
         <div class="topnav" id="myTopnav">
+            <a href="#"><img style="height: 20px;" src="http://localhost/lms/assets/images/cap.png"/></a>
             <a href="home" class="active">Home</a>
             <a href="customers">Customers</a>
             <a href="loans">Loans</a>
