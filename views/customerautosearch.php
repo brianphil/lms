@@ -11,6 +11,6 @@ $result = [];
 
 while($data = mysqli_fetch_array($query))
 {
-    $result[] = $data['fname'].' '.$data['lname'].' '.$data['mname'];
+    $result[] = $data['id'].'-'. $data['fname'].' '.$data['lname'].' '.$data['mname'];
 }
 echo json_encode($result);

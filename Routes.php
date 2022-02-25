@@ -26,6 +26,12 @@ Route::set('newcustomer', function () {
 Route::set('customerautosearch', function () {
     Home::createView('CustomerAutosearch');
 });
+/**route for update/delete customer */
+Route::set('updatecustomer', function () {
+    Home::createView('UpdateCustomer');
+});
+
+
 
 
 /**route for loans */
@@ -68,4 +74,3 @@ Route::set('registernewemployee', function () {
 Route::set('branchmanager', function () {
     Home::createView('BranchManager');
 });
-

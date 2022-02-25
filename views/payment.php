@@ -37,6 +37,9 @@ include "partials/header.php";
                 <li class="nav-item">
                     <a class="nav-link" href="paymentschedule">Payment Schedule</a>
                 </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Application Fee</a>
+                </li>
             </ul>
             <div class="row" style="margin: 1%;">
                 <div class="col-sm-12">

@@ -18,7 +18,7 @@ include "partials/header.php";
         </a>
     </div>
 
-    <div style="margin-top:4%; padding-left:16px; background: #eee">
+    <div style="margin-top:4%; padding-left:1px; background: #eee">
         <table>
             <tr>
                 <td>Home</td>
@@ -29,25 +29,51 @@ include "partials/header.php";
     </div>
     <div class="row" style="margin: 1%;">
         <div class="col-sm-12" style="margin-bottom: 5px;">
-            <a href="loans"><button class="btn-secondary" style="width: 20%;">Back</button></a>
+            <a style="text-decoration: none;" href="loans"><button class="btn-secondary form-control" style="width: 20%;">Back</button></a>
         </div>
+        <?php
+        $message = '';
+        if (isset($_POST['submit'])) {
 
-        <div class="row">
+            /**instantiate the db */
+            $db = new Database();
+
+            /**extract customer id */
+            $search = $_POST['search'];
+            $temp_id = explode('-', $search);
+            $id = $temp_id[0];
+            /**end extraction */
+            $amount = $_POST['amount'];
+            $term = $_POST['term'];
+            $repaymentStartDate = $_POST['repaymentStartDate'];
+            $paymentAmount = $_POST['paymentAmount'];
+            $l_query = "INSERT INTO loans (customer_id, amount_applied, repayment_amount, term, repayment_start_date, loan_balance, added_by) VALUES('$id', '$amount', '$paymentAmount', '$term', '$repaymentStartDate', '$paymentAmount', '1')";
+            $res = $db->mysqli->query($l_query);
+            if($res){
+                $message = '<div style="margin-top: 5px; text-align:center; margin-right:auto; margin-left:auto;" class="alert alert-success" role="alert">Loan created successfully!</div>';
+            }
+            else{
+                $message = '<div style="margin-top: 5px; text-align:center; margin-right:auto; margin-left:auto;" class="alert alert-danger" role="alert">An error occured while creating loan!</div>';    
+            }
+        }
+        ?>
+
+        <div class="row" style="margin-bottom: 50px;">
             <div class="col-sm-12" style="margin-left: auto; margin-right: auto; width: auto;">
-                <h5 style="color: #282;">Create new loan</h5>
+                <h5 style="color: #282; text-align:center;">Create new loan</h5>
+                <?= $message ?>
                 <form class="form-control" style="margin: 10%" method="post">
                     <label style="color: #228;" class="form-label">Customer Name <span style="color: red">*</span></label>
                     <input class="form-control" id="autocomplete-search" type="text" name="search" placeholder="Search name..." />
-                    <input type="hidden" name="customerId" value="">
                     <label style="color: #228;" class="form-label">Loan amount (Ksh) <span style="color: red">*</span></label>
                     <input id="amount" class="form-control" type="text" name="amount" placeholder="5000" />
                     <label style="color: #228;" class="form-label">Term (in weeks) <span style="color: red">*</span></label>
                     <input id="term" class="form-control" type="text" name="term" placeholder="4" />
                     <label style="color: #228;" class="form-label">Repayment start date <span style="color: red">*</span></label>
-                    <input class="form-control" type="date" name="repaymentStartDate" /><br>
-                    <button type="button" onclick="calculateRate(); return false;" id="calculate" name="calculate" style="width: 50%;" class="btn-success">Calculate</button><br><br>
+                    <input class="form-control" placeholder="<?= date('d/m/Y');  ?>" type="date" name="repaymentStartDate" /><br>
+                    <button type="button" onclick="calculateRate(); return false;" id="calculate" name="calculate" style="width: 50%;" class="btn-success form-control">Calculate</button><br><br>
                     <label style="color: #228;" class="form-label">Amount to repay (Ksh)</label>
-                    <input id="amount-to-pay" class="form-control" type="text" name="paymentAmount" placeholder="0.00" disabled />
+                    <input id="amount-to-pay" class="form-control" type="text" name="paymentAmount" placeholder="0.00" readonly />
                     <p>
                         <input id="submit" class="form-control btn-primary" type="submit" value="Submit" name="submit" style="margin-top: 10px; width: 100%;" disabled />
                     </p>

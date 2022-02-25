@@ -22,14 +22,14 @@
             <td>Garrett Winters</td>
             <td>Accountant</td>
             <td>Tokyo</td>
-            <td>63</td>
+            <td style="background-color:coral">63</td>
             <td>2011/07/25</td>
             <td>$170,750</td>
         </tr>
-        <tr>
-            <td>Ashton Cox</td>
+        <tr style="background-color:red; color:#fff;">
+            <td style="background-color:#000">Ashton Cox</td>
             <td>Junior Technical Author</td>
-            <td>San Francisco</td>
+            <td >San Francisco</td>
             <td>66</td>
             <td>2009/01/12</td>
             <td>$86,000</td>

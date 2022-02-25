@@ -29,7 +29,7 @@ include "partials/header.php";
         <div style="margin: 1%;">
             <div style="margin-bottom: 10px;" class="row">
                 <div style="float: right;" class="col-sm-12">
-                    <a href="customers"><button class="btn-secondary" style="width: 20%">Back</button></a>
+                    <a style="text-decoration: none;"  href="customers"><button class="btn-secondary form-control" style="width: 20%">Back</button></a>
                 </div>
             </div>
             <?php
@@ -83,7 +83,7 @@ include "partials/header.php";
                         <label class="form-label">ID Number <span style="color: red">*</span></label>
                         <input type="text" placeholder="12345678" name="gidNumber" class="form-control" />
                         </p>
-                        <input type="submit" name="submit" value="Register" class="btn-primary" style="width: 100%" /><br>
+                        <input type="submit" name="submit" value="Register" class="btn-primary form-control" style="width: 100%" /><br>
 
                         </p>
 

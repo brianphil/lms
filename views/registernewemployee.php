@@ -42,7 +42,10 @@ include "partials/header.php";
                     <a class="nav-link active" style="color:darkgreen;" aria-current="page" href="#">Register New</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#">Payroll</a>
+                    <a class="nav-link" href="#">View Payroll</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">New Payroll</a>
                 </li>
             </ul>
             <?php
@@ -96,7 +99,7 @@ include "partials/header.php";
                         <label style="color:darkblue;" class="form-label">Re-enter password <span style="color: red">*</span></label>
                         <input type="password" name="password1" class="form-control" />
                         </p>
-                        <input type="submit" name="submit" value="Register" class="btn-primary" style="width: 100%" /><br>
+                        <input type="submit" name="submit" value="Register" class="btn-primary form-control" style="width: 100%" /><br>
 
                         </p>
                     </form>
